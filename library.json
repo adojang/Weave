@@ -22,7 +22,9 @@
         "me-no-dev/ESPAsyncWebServer": "https://github.com/me-no-dev/ESPAsyncWebServer.git#f71e3d427b5be9791a8a2c93cf8079792c3a9a26",
         "Aasim-A/AsyncTimer": "https://github.com/Aasim-A/AsyncTimer.git#37efe0ff212aa282ee7f86fd3734c259655ca15a",
         "ayushsharma82/AsyncElegantOTA": "https://github.com/ayushsharma82/AsyncElegantOTA.git#0d7e6f1e3202ad562a61f93ed91220593c5380ff",
-        "ayushsharma82/WebSerial": "https://github.com/ayushsharma82/WebSerial.git#f385c2a4f2d8c6cb3984fad77f023c9de8d5883b"
+        "ayushsharma82/WebSerial": "https://github.com/ayushsharma82/WebSerial.git#f385c2a4f2d8c6cb3984fad77f023c9de8d5883b",
+        "marvinroger/async-mqtt-client": "https://github.com/marvinroger/async-mqtt-client.git#89bf46485d5b60ce1e8e5e4d265a9c1570de3dc5"
+        
     },
     "frameworks": "arduino",
     "platforms": "espressif32"

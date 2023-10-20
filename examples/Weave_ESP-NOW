@@ -1,0 +1,10 @@
+/*
+  Weave ESP-NOW Example - This example will host an AP from the ESP32 and try to register and connect to a peer.
+  Take care to register the mac addresses of each ESP.
+  Two Way communication is possible if STA_AP wifi mode is used.
+  -----
+  Author: Adriaan van Wijk (https://github.com/adojang/)
+  
+  Please consider starring the repository on Github if you like the library 
+  Repository Link: https://github.com/adojang/Weave
+*/

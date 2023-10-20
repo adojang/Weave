@@ -1,0 +1,8 @@
+/*
+  Weave MQTT Example - This example will connect to your wifi and  post to a public MQTT broker using the Async-mqtt-client library by Marvin Roger
+  -----
+  Author: Adriaan van Wijk (https://github.com/adojang/)
+  
+  Please consider starring the repository on Github if you like the library 
+  Repository Link: https://github.com/adojang/Weave
+*/

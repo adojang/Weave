@@ -14,6 +14,15 @@
 #include <ESPmDNS.h>
 #include <esp_now.h>
 
+/* MQTT */
+#include <AsyncMqttClient.h>
+extern "C" {
+	#include "freertos/FreeRTOS.h"
+	#include "freertos/timers.h"
+}
+
+#include "MQTT.h"
+
 /* Utilities */
 #include <AsyncElegantOTA.h>
 #include <WebSerial.h>
