@@ -1,8 +1,7 @@
-<h1> Weave</h1>
 <p>
   <br/>
 </p>
-<p align="center"><img src="https://cdn.leonardo.ai/users/9058ecdb-9f80-42e7-b9e4-0f4a211c0b4a/generations/3bc1b4cb-16f8-4494-8003-23b0fb4e9b82/DreamShaper_v7_spiderweb_woven_into_data_flow_wifi_abstraction_2.jpg" width="700"></p>
+<p align="center"><img src="https://github.com/adojang/Weave/assets/48274045/09e9cbde-abff-4da5-b21c-b0c5e2647202" width="700"></p>
 <br/>
 <br/>
 
