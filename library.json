@@ -1,6 +1,6 @@
 {
     "name": "Weave",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Weave is a library that simplifies Wi-Fi initialization, AsyncOTA, WebSerial, and mDNS setup for ESP32 microcontrollers.",
     "keywords": "ESP32, Wi-Fi, AsyncOTA, WebSerial, mDNS",
     "repository": {
