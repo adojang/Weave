@@ -1,9 +1,0 @@
-/*
-  Weave OTA Example - This example will host an AP from the ESP32 that allows you to do OTA updates to it using the ElegantOTA by Ayush Sharma
-  You can find your build file under your build dir in Platformio. look for "firmware.bin".
-  -----
-  Author: Adriaan van Wijk (https://github.com/adojang/)
-  
-  Please consider starring the repository on Github if you like the library 
-  Repository Link: https://github.com/adojang/Weave
-*/

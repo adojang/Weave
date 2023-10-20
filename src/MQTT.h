@@ -1,10 +1,9 @@
 #ifndef MQTT_FUNCTIONS_H
 #define MQTT_FUNCTIONS_H
 
-#include "AsyncMqttClient.h"  // Include the library you need
-#include "WiFi.h"
-//This allows us to use this in our main.cpp file
-// extern AsyncMqttClient mqttClient;
+#include <AsyncMqttClient.h>
+#include <WiFi.h>
+#include <ArduinoJson.h>
 
 void connectToWifi();
 void connectToMqtt();
@@ -16,5 +15,7 @@ void onMqttUnsubscribe(uint16_t packetId);
 void onMqttMessage(char* topic, char* payload, AsyncMqttClientMessageProperties properties, size_t len, size_t index, size_t total);
 void onMqttPublish(uint16_t packetId);
 void initMQTT(IPAddress host, const int  port, const char* username, const char* password);
-
+void initMQTT(IPAddress host, const int  port);
+void publishJSON(String jsonString, String topic, int QOS = 0);
+void mqttSubscribe(String topic, int QOS = 0);
 #endif

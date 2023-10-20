@@ -1,6 +1,5 @@
 #include "Weave.h"
 
-
 //Initialization - When Created.
 Weave::Weave(){
 
@@ -12,7 +11,7 @@ _OTA_PASS = "admin1234"; // setup in weaveconfig.h
  _wifitype = WIFI_AP;
 }
 
-
+extern AsyncWebServer server;
 void Weave::recvMsg(uint8_t *data, size_t len){
   WebSerial.println("Received Data...");
   String d = "";
@@ -146,14 +145,15 @@ uint8_t Weave::startmdns(){
   
 }
 
-uint8_t Weave::startota(AsyncWebServer& server){
+// uint8_t Weave::startota(AsyncWebServer& server){
+uint8_t Weave::startota(){
     /* Elegant OTA */
   AsyncElegantOTA.begin(&server, _OTA_USER, _OTA_PASS);
   Serial.println("AsyncOTA Start");
   return 0;
 }
 
-uint8_t Weave::startwebserial(AsyncWebServer& server){
+uint8_t Weave::startwebserial(){
 
   /*WebSerial*/
   WebSerial.begin(&server);
@@ -168,7 +168,8 @@ uint8_t Weave::startwebserial(AsyncWebServer& server){
   return 0;
 }
 
-uint8_t Weave::startserver(AsyncWebServer& server, const char* NAME){
+uint8_t Weave::startserver(){
+  const char* NAME = _mdnsName;
 
   server.on("/", HTTP_GET, [NAME](AsyncWebServerRequest *request){
 String webstring = String(NAME) + ".local/update</h1>";
@@ -218,14 +219,14 @@ String html = html1 + webstring + html2 + webserial + html3;
   return 0;
 }
 
-uint8_t Weave::fullstack(AsyncWebServer& server){
+uint8_t Weave::fullstack(){
   Serial.println("EscCore 1.0 (c) Adriaan van Wijk 2023");
 
   startwifi();
   startmdns();
-  startota(server);
-  startwebserial(server);
-  startserver(server, _mdnsName);
+  startota();
+  startwebserial();
+  startserver();
   //Server Default Page.
 
   return 0;

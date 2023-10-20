@@ -4,7 +4,7 @@
 
 /* Kernal*/
 #include <Arduino.h>
-#include <ArduinoJson.h>
+
 
 /* Wifi and Networking */
 #include <AsyncTCP.h>
@@ -47,13 +47,14 @@ class Weave
      * @brief Initialize Entire Octopus Functionality
      * @attention Starts Wifi, mDNS, OTA, WebSerial, and Dashboard    
      */
-    uint8_t fullstack(AsyncWebServer& server);
+    uint8_t fullstack();
 
 
     uint8_t startwifi();
     uint8_t startmdns();
-    uint8_t startota(AsyncWebServer& server);
-    uint8_t startwebserial(AsyncWebServer& server);
+        // uint8_t startota();
+    uint8_t startota();
+    uint8_t startwebserial();
 
   //    template <typename T>
   // unsigned short addSerialCmd(T lambda, const char* command) {
@@ -65,7 +66,7 @@ class Weave
      * 
      * @return 0 - All Good.
      */
-    uint8_t startserver(AsyncWebServer& server, const char* NAME);
+    uint8_t startserver();
 
 
 
