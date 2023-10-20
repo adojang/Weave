@@ -1,4 +1,5 @@
-# Weave
+![Weave Banner](https://github.com/adojang/Weave/assets/48274045/38f192c2-787c-4b49-9bb7-b7692e08df27)
+
 
 ### The Ultimate Telematics and Telemetry Library for the ESP32
 
