@@ -1,9 +1,8 @@
-<p>
-  <br/>
-</p>
-<p align="center"><img src="https://github.com/adojang/Weave/assets/48274045/09e9cbde-abff-4da5-b21c-b0c5e2647202" width="700"></p>
-<br/>
-<br/>
+# Weave
+
+### The Ultimate Telematics and Telemetry Library for the ESP32
+
+Weave is a collection of niche telemetry libraries designed to create a sophisticated all-in-one solution for collecting and displaying data in real-time, beautifully. This library is primarily designed for the ESP32 microcontroller but may also be compatible with the ESP8266 microcontroller.
 
 <p align="center">
 <img src="https://img.shields.io/github/last-commit/adojang/Weave?style=for-the-badge" />
@@ -12,41 +11,66 @@
 <img src="https://img.shields.io/github/license/adojang/Weave.svg?style=for-the-badge" />
 </p>
 
-<br/>
-<br/>
-<p align="center"><b>Weave</b> is a collection of niche telemetry libraries to create a sophisticated all in one solution for collecting and displaying data in real-time, beautifully. The library is designed for the <b>ESP32</b> microcontroller, but may be compatable with the <b>ESP8266</b> microcontroller too. 
-  <br><br>This library includes:
-  <br>-ESPDash
-  <br>-ElegantOTA
-  <br>-Webserial
-  <br>-MQTT
-  <br>-AsyncTimer
-  <br>-mDNS support
-  <br>-ESP-NOW support for all configurations
-<br/>
+## Features
 
-<h2>Features</h2>
+Weave includes the following features and functionality:
 
-- 🔥 Automatic Dashboard webpage generation using **ESPDash**.
-- ⏱️ Realtime updates to all connected clients, either locally or through the web.
-- 🕸 No need to spend hours struggling to find a way to get data from A to B. Weave 'just works'.
-- 🗨 MQTT Support so you can get your data anywhere on the web in real-time with no fuss.
+- ESPDash
+- ElegantOTA
+- Webserial
+- MQTT
+- AsyncTimer
+- mDNS support
+- ESP-NOW support for all configurations
+
+  
 
 
-<br/>
-<br/>
 
 
-<h2>Documentation</h2>
-<p>(Nothing Written Yet)</p>
+# API
 
-<br/>
-<br/>
+## init(const char* ssid, const char* password, wifi_mode_t WIFITYPE, const char* mdnsName);
+
+Initializes Weave.
+
+`init` takes in the `SSID` and `PASSWORD` from the main program. The `WIFITYPE` is either `WIFI_AP`, `WIFI_STA`, or `WIFI_AP_STA`. The mdnsName is the domain where the dashboard, webserial, and OTA will be accessed from.
+
+If `WIFITYPE` is `WIFI_AP`, the `SSID` and `PASSWORD` are used to create an AP hosted on the ESP32 with those credentials.
+
+If `WIFITYPE` is `WIFI_STA`, the `SSID` and `PASSWORD` are used to try and connect to an existing wifi network with those credentials.
+
+if `WIFITYPE` is `WIFI_AP_STA`, the ESP32 will use the `SSID` and `PASSWORD` to connect to an existing wifi network, exactly how `WIFI_STA` behaves. A hidden additional network is hosted from the ESP32 with the `SSID` of `mdnsName` and the arbitrary password: `pinecones` 
 
 
-<h2>License</h2>
+#### Example:
 
-Weave is licensed under MIT Liceence. If you are intending to use ESP-DASH in a commercial project, please consider sending me a message telling me what awesome applications its being used for, I'd love to hear!
+- Initializing the ESP32 to connect to your exising network
 
-<br>
-<br>
+```
+  const char* SSID = "yourSSID";
+  const char* PASS = "yourpass";
+  const char* mdns = "weave";
+  wv.init(SSID, PASS, WIFI_AP, mdns);
+  wv.startwifi();
+
+```
+
+# Examples
+
+- WeaveOTA - Demonstrate OTA functionality
+- WeaveMQTT - Send a message to an MQTT broker with the ESP32 acting as a client.
+- WeaveWebSerial - Demonstrate WebSerial functionality
+- Weave-NOW - Show how to setup an ESP-NOW mesh
+- WeaveDashboard - ESPDash integration demonstration.
+
+# License
+
+This library is licensed under [MIT](https://github.com/adojang/Weave/master/LICENSE).
+
+# Copyright
+
+Copyright 2023 - Adojang
+
+Adriaan van Wijk
+
