@@ -17,6 +17,7 @@
     ],
     "license": "MIT",
     "dependencies": {
+        "ayushsharma82/ESP-DASH": "^4.0.0",
         "bblanchon/ArduinoJson": "https://github.com/bblanchon/ArduinoJson.git#49e2a8d421d7f442ac397d42caa3f60b2c00db54",
         "me-no-dev/AsyncTCP": "https://github.com/me-no-dev/AsyncTCP.git#ca8ac5f919d02bea07b474531981ddbfd64de97c",
         "me-no-dev/ESPAsyncWebServer": "https://github.com/me-no-dev/ESPAsyncWebServer.git#f71e3d427b5be9791a8a2c93cf8079792c3a9a26",

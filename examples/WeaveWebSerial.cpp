@@ -1,13 +1,11 @@
 /*
-  Weave OTA Example - This example connects to an existing AP and allows you to do OTA updates to it using the ElegantOTA by Ayush Sharma
-  You can find your build file under your build dir in Platformio. look for "firmware.bin".
+  Weave WebSerial Example - This example will connect to an AP and broadcast a WebSerial terminal.
   -----
   Author: Adriaan van Wijk (https://github.com/adojang/)
   
   Please consider starring the repository on Github if you like the library 
   Repository Link: https://github.com/adojang/Weave
 */
-
 
 #include <Weave.h>
 
@@ -33,18 +31,23 @@ void setup(){
 
     //Choose which Components we want to enable
     wv.startmdns();
-    wv.startota();
+    wv.startwebserial();
 
     //Start the server
     wv.startserver();
 
-    Serial.printf("Setup Complete. Go to %s.local/update to verify it works\n\n", mdns);
-    Serial.printf("Default Username: admin\nDefault Password: admin1234\n");
+    Serial.printf("Setup Complete. Go to %s.local/webserial to verify it works\n\n", mdns);
 }
 
 
-
+unsigned long timesinceboot = millis();
 void loop(){
+
+  if (millis() - timesinceboot > 1000){
+    timesinceboot = millis();
+    WebSerial.printf("Time Since Boot: %d\n", int(timesinceboot/1000));
+  }
+
 
 
 asynctimer.handle();

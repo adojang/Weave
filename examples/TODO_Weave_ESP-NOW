@@ -1,5 +1,5 @@
 /*
-  Weave ESP-NOW Example - This example will host an AP from the ESP32 and try to register and connect to a peer.
+  Weave-NOW Example - This example will host an AP from the ESP32 and try to register and connect to a peer.
   Take care to register the mac addresses of each ESP.
   Two Way communication is possible if STA_AP wifi mode is used.
   -----

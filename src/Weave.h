@@ -4,7 +4,7 @@
 
 /* Kernal*/
 #include <Arduino.h>
-
+#include <ArduinoJson.h>
 
 /* Wifi and Networking */
 #include <AsyncTCP.h>
