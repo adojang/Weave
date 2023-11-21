@@ -39,7 +39,14 @@ void setup(){
     //Start Wifi
     wv.startwifi();
 
-    mqttSubscribe("corelight/alice");
+      //Delay Needed to wait for MQTT init
+  while(!connected()){
+    //Wait until MQTT has initialized
+    delay(10);
+  }
+
+    //optionally subscribes to a topic. This allows two way communication since the ESP will be listening.
+    mqttSubscribe("Weave/example");
 
 
   //We use AsyncTimer to regularly send updates (useful for logging/monitoring)

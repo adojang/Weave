@@ -1,7 +1,7 @@
 {
     "name": "Weave",
-    "version": "1.0.2",
-    "description": "Weave is a library that simplifies Wi-Fi initialization, AsyncOTA, WebSerial, and mDNS setup for ESP32 microcontrollers.",
+    "version": "1.1.1",
+    "description": "Weave is a library that simplifies Wi-Fi initialization, AsyncOTA, MQTT, WebSerial, and mDNS setup for ESP32 microcontrollers.",
     "keywords": "ESP32, Wi-Fi, AsyncOTA, WebSerial, mDNS",
     "repository": {
         "type": "git",
@@ -18,13 +18,14 @@
     "license": "MIT",
     "dependencies": {
         "ayushsharma82/ESP-DASH": "^4.0.0",
-        "bblanchon/ArduinoJson": "https://github.com/bblanchon/ArduinoJson.git#49e2a8d421d7f442ac397d42caa3f60b2c00db54",
+        "bblanchon/ArduinoJson": "https://github.com/bblanchon/ArduinoJson.git#7517ecb91b50b8ed4b6c94a4b83031ef86a01a26",
         "me-no-dev/AsyncTCP": "https://github.com/me-no-dev/AsyncTCP.git#ca8ac5f919d02bea07b474531981ddbfd64de97c",
-        "me-no-dev/ESPAsyncWebServer": "https://github.com/me-no-dev/ESPAsyncWebServer.git#f71e3d427b5be9791a8a2c93cf8079792c3a9a26",
+        "adojang/ESPAsyncWebServer": "https://github.com/adojang/ESPAsyncWebServer.git#f71e3d427b5be9791a8a2c93cf8079792c3a9a26",
         "Aasim-A/AsyncTimer": "https://github.com/Aasim-A/AsyncTimer.git#37efe0ff212aa282ee7f86fd3734c259655ca15a",
         "adojang/AsyncElegantOTA": "https://github.com/adojang/AsyncElegantOTA.git#78550fd4419c842375757aaf9800dec87e2c4e52",
         "ayushsharma82/WebSerial": "https://github.com/ayushsharma82/WebSerial.git#f385c2a4f2d8c6cb3984fad77f023c9de8d5883b",
         "marvinroger/async-mqtt-client": "https://github.com/marvinroger/async-mqtt-client.git#89bf46485d5b60ce1e8e5e4d265a9c1570de3dc5"
+        
         
     },
     "frameworks": "arduino",

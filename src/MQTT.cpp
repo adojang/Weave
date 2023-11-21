@@ -49,6 +49,9 @@ void mqttSubscribe(String topic, int QOS){
         mqttClient.subscribe(topic.c_str(), QOS);
 }
 
+bool connected(){
+  return mqttClient.connected();
+}
 
 void connectToWifi() {
   Serial.println("Callback Function: Connecting to Wi-Fi...");

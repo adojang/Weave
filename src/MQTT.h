@@ -6,6 +6,7 @@
 #include <ArduinoJson.h>
 
 void connectToWifi();
+bool connected();
 void connectToMqtt();
 void WiFiEvent(WiFiEvent_t event);
 void onMqttConnect(bool sessionPresent);
