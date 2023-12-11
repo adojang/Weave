@@ -55,21 +55,23 @@ uint8_t Weave::startwifi(){
 
   if(_wifitype == WIFI_AP_STA)
   {
-  Serial.printf("WiFi Type Configured as: AP_STA\n Will Host a hidden network for ESP-NOW communication, and connect to an existing network.");
+    WiFi.setScanMethod(WIFI_ALL_CHANNEL_SCAN);
+    WiFi.setSortMethod(WIFI_CONNECT_AP_BY_SIGNAL);
+    Serial.printf("WiFi Type Configured as: AP_STA\n Will Host a hidden network for ESP-NOW communication, and connect to an existing network.");
 
-  /* Host a Hidden Network for use by ESP Now Mult=Mult */
-  WiFi.softAP(_mdnsName, "pinecones", 0, 1, 4);
-  WiFi.mode(WIFI_AP_STA);
-  WiFi.begin(_ssid, _password);
-  Serial.println("Connecting to WiFi Network");
-      int wifitimeout = 0;
-        while (WiFi.status() != WL_CONNECTED) {
-          Serial.print('.');
-          delay(1000);
-          wifitimeout += 1;
-          if(wifitimeout > 10){
-            Serial.println("Could not connect to WiFi Network, restarting ESP32");
-            ESP.restart();
+    /* Host a Hidden Network for use by ESP Now Mult=Mult */
+    WiFi.softAP(_mdnsName, "pinecones", 0, 1, 4);
+    WiFi.mode(WIFI_AP_STA);
+    WiFi.begin(_ssid, _password);
+    Serial.println("Connecting to WiFi Network");
+        int wifitimeout = 0;
+          while (WiFi.status() != WL_CONNECTED) {
+            Serial.print('.');
+            delay(1000);
+            wifitimeout += 1;
+            if(wifitimeout > 10){
+              Serial.println("Could not connect to WiFi Network, restarting ESP32");
+              ESP.restart();
           }
         }
 
